@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4133750569760355922}
   - component: {fileID: 3851149723829656116}
   - component: {fileID: 5216054433262914151}
+  - component: {fileID: 8718346233429325641}
   m_Layer: 5
   m_Name: SubjectBtn
   m_TagString: Untagged
@@ -196,3 +197,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8718346233429325641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4779750361413468196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bdc134ee2f74eb59166d877b43686f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
