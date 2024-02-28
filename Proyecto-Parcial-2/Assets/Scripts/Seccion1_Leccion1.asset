@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e3cecfc9ceccd40fa96e04e3f67df6b6, type: 3}
   m_Name: Seccion1_Leccion1
   m_EditorClassIdentifier: Assembly-CSharp::Subject
   Lesson: 0
   leccionList:
   - ID: 0
-    lessons: "\xBFQue es una variable?"
+    lessons: "\xBFQu\xE9 es una variable?"
     options:
     - ID
     - Lista
@@ -24,31 +24,31 @@ MonoBehaviour:
     - contenedor
     correctAnswer: 4
   - ID: 1
-    lessons: "\xBFQue es una funcion?"
+    lessons: "\xBFQue es una funci\xF3n?"
     options:
     - Variable
     - proceso
     - clase
     - recurso
     - script
-    correctAnswer: 1
+    correctAnswer: 0
   - ID: 2
     lessons: "\xBFQue es un algoritmo?"
     options:
-    - Variable
-    - proceso
-    - clase
-    - recurso
-    - script
-    correctAnswer: 1
-  - ID: 2
-    lessons: "\xBFQue es un algoritmo?"
+    - Una serie de pasos para resolver un problema
+    - Es una variable
+    - "Una funci\xF3n"
+    - Un programa
+    - Un script
+    correctAnswer: 0
+  - ID: 3
+    lessons: "\xBFQue es un programa?"
     options:
-    - Una serie de pasos para resolver un preoblema
-    - 
-    - 
-    - 
-    - 
+    - "Una funci\xF3n"
+    - Una clase
+    - Un recurso
+    - Un conjunto de algoritmos
+    - Una serie de TV
     correctAnswer: 0
   - ID: 0
     lessons: 
