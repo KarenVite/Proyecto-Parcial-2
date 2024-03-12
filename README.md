@@ -8,6 +8,6 @@ Este proyecto se basa en la creación de una lección de duolingo adaptada al le
 3. Localizar el ZIP para descomprimir el archivo.
 4. Abrir la carpeta con el mismo nombre del repositorio
 
----ABRIR DESDE UNITY---
-5.
+---DESCRIPCIÓN DEL PROYECTO---
+Es un sistema que reproduce el estilo de la aplicación para aprender idiomas "Duolingo", contiene 5 preguntas y 5 posibles respuestas las cuales el programa evalua si fueron correctas o incorrectas.
 
