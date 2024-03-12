@@ -31,7 +31,7 @@ MonoBehaviour:
     - clase
     - recurso
     - script
-    correctAnswer: 0
+    correctAnswer: 1
   - ID: 2
     lessons: "\xBFQue es un algoritmo?"
     options:
@@ -49,8 +49,13 @@ MonoBehaviour:
     - Un recurso
     - Un conjunto de algoritmos
     - Una serie de TV
-    correctAnswer: 0
+    correctAnswer: 3
   - ID: 0
-    lessons: 
-    options: []
-    correctAnswer: 0
+    lessons: "\xBFExiste una diferencia entre programa y aplicaci\xF3n?"
+    options:
+    - 
+    - Si
+    - No
+    - 
+    - 
+    correctAnswer: 2

@@ -25,6 +25,7 @@ public class LessonContainer : MonoBehaviour
 
     void Start()
     {
+        //si el gameObject está puesto se va a OnUpdateUI
         if (lessonContainer != null)
         {
             OnUpdateUI();
@@ -38,13 +39,16 @@ public class LessonContainer : MonoBehaviour
 
     public void OnUpdateUI()
     {
+        //Accedemos a los textos StageTitle y LessonStage
         if (StageTitle != null || LessonStage != null)
         {
+            //Esto se mostrará en la UI
             StageTitle.text = "Leccion " + Lection;
             LessonStage.text = "Leccion " + CurrentLession + " de " + TotalLessions;
         }
         else
         {
+            //Enviamos un mensaje por si los textos no están puestos
             Debug.LogWarning("GameObject Nulo, revisa las variables de tipo TMP_Text");
         }
     }
@@ -54,6 +58,7 @@ public class LessonContainer : MonoBehaviour
     public void EnableWindow()
     {
         OnUpdateUI();
+        //hacemos que la ventana de la lección aparezca y desaparezca
         if (lessonContainer.activeSelf)
         {
             //Desactiva el objeto si está activo
