@@ -15,10 +15,12 @@ Este proyecto se basa en la creación de una lección de duolingo adaptada al le
 Es un sistema que reproduce el estilo de la aplicación para aprender idiomas "Duolingo", contiene 5 preguntas y 5 posibles respuestas las cuales el programa evalua si fueron correctas o incorrectas.
 
 ---MENU PRINCIPAL---
+
 [![Captura-de-pantalla-231.png](https://i.postimg.cc/CMJ8PpRG/Captura-de-pantalla-231.png)](https://postimg.cc/F1d1zqgz)
 [![Captura-de-pantalla-232.png](https://i.postimg.cc/7PBC11RX/Captura-de-pantalla-232.png)](https://postimg.cc/5jCNbzbF)
 
 ---ESCENA JUGABLE---
+
 [![Captura-de-pantalla-233.png](https://i.postimg.cc/DZngGQNn/Captura-de-pantalla-233.png)](https://postimg.cc/zL2KZh5c)
 [![Captura-de-pantalla-234.png](https://i.postimg.cc/K8TrssSm/Captura-de-pantalla-234.png)](https://postimg.cc/TKRDK03s)
 [![Captura-de-pantalla-235.png](https://i.postimg.cc/Hx6Q7q59/Captura-de-pantalla-235.png)](https://postimg.cc/hz7Jk32X)
