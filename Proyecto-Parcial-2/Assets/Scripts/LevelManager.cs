@@ -51,6 +51,7 @@ public class LevelManager : MonoBehaviour
         LoadQuestion();
     }
 
+    //Cargar la pregunta siguiente
     private void LoadQuestion()
     {
         //Aseguramos que la pregunta actual este dentro de los limites
@@ -67,7 +68,7 @@ public class LevelManager : MonoBehaviour
             //Establecemos las Opciones
             for (int i = 0; i < currentLesson.options.Count; i++)
             {
-                //Agreegamos el contenido(respuesta), así como su ID
+                //Agregamos el contenido(respuesta), así como su ID
                 option[i].GetComponent<Option>().OptionName = currentLesson.options[i];
                 option[i].GetComponent<Option>().OptionID = i;
                 option[i].GetComponent<Option>().UpdateText();
@@ -80,8 +81,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    //Para pasar a la siguiente pregunta
     public void NextQuestion()
     {
+        //Revisa la respuesta que selecciona el jugador
         if (CheckPlayerState())
         {
             //Revisamos si la respuesta es correcta o no
@@ -90,29 +93,32 @@ public class LevelManager : MonoBehaviour
             //Activa el AnswerContainer
             AnswerContainer.SetActive(true);
 
-            //Si se cumple la variable isCorrect
+            //Revisa si la respuesta es correcta
             if (isCorrect)
             {
-                //El contenedor cambia a color verde
+                //El contenedor cambia a color verde si la respuesta es correcta
                 AnswerContainer.GetComponent<Image>().color = Green;
                 textQuestion1.text = "Respuesta correcta";
                 Debug.Log("Respuesta correcta. " + question + ": " + correctAnswer);
             }
-            else //Si no se cumple la variable isCorrect
+            else //Si no es correcta
             {
-                //El contenedor cambia a color rojo 
+                //El contenedor cambia a color rojo si la respuesta es incorrecta
                 AnswerContainer.GetComponent<Image>().color = Red;
                 textQuestion1.text = "Respuesta Incorrecta";
                 Debug.Log("Respuesta Incorrecta. " + question + ": " + correctAnswer);
             }
 
-            //Incrementamos el índice de la pregunta actual
+            //Incrementamos el índice de la pregunta actual para que la pregunta no se repita
             currentQuestion++;
 
-            //Mostrar el resultado durante un tiempo (puedes usar una coroutine o Invoke)
+            //ShowResultAndLoadQuestion comienza una corrutina (las corrutinas comunmente son
+            //utilizadas en escenarios scenarios donde se necesitan procesos de larga duración,
+            //como la carga de recursos) que suspende por 2 segundos el contenedor de respuesta
+            //y cambiará de pregunta
             StartCoroutine(ShowResultAndLoadQuestion(isCorrect));
 
-            //Reset answer from player
+            //Reinicia la respuesta del jugador para la nueva pregunta
             answerFromPlayer = 9;
 
         }
@@ -123,6 +129,8 @@ public class LevelManager : MonoBehaviour
         
     }
 
+    //Inicia una corrutina que suspende el código dependiendo de lo que se especigique dentro
+    //de esta
     private IEnumerator ShowResultAndLoadQuestion(bool isCorrect)
     {
         yield return new WaitForSeconds(2.5f);//Ajusta el tiempo que deseas mostrar el resultado
@@ -139,23 +147,30 @@ public class LevelManager : MonoBehaviour
         CheckPlayerState();
     }
 
+    //Asignará la respuesta del jugador
     public void SetPlayerAnswer(int _answer)
     {
+        //Actualiza la respuesta del jugador
         answerFromPlayer = _answer;
     }
 
+    //Nos aseguramos si el jugador presionó un botón para cambiar su color y activarlo
     public bool CheckPlayerState()
     {
-        //Activamos el boton de comprobar si el correct answer es diferente a 9
+        //Nos aseguramos si los botonoes cambian de color al ser presionados
         if (answerFromPlayer != 9)
         {
+            //Actualizamos el componente boton para que sea interactuable
             CheckButton.GetComponent<Button>().interactable = true;
+            //Actualizamos el componente Imagen para que cambie su color
             CheckButton.GetComponent<Image>().color = Color.white;
             return true;
         }
-        else //Desactivamos el boton si el AnswerFromPlayer es 9 (se mantiene descativado hasta que el jugador seleccione una opción)
+        else //Si no se interactua con el boton
         {
+            //Actualizamos el componente boton para que no se pueda presionar
             CheckButton.GetComponent<Button>().interactable = false;
+            //Actualizamos el componente Imagen para que cambie su color
             CheckButton.GetComponent<Image>().color = Color.grey;
             return false;
         }

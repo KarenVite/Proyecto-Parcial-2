@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
+//Este script pertenece a la escena: SampleScena. La cual podemos considerar el menu para
+//acceder a nuestra Leccion
 public class LessonContainer : MonoBehaviour
 {
     [Header("GameObject Configuration")]
@@ -37,12 +38,13 @@ public class LessonContainer : MonoBehaviour
         }
     }
 
+    //Para actualizar nuestra UI
     public void OnUpdateUI()
     {
         //Accedemos a los textos StageTitle y LessonStage
         if (StageTitle != null || LessonStage != null)
         {
-            //Esto se mostrará en la UI
+            //Actualizamos los textos que se mostraran en la UI
             StageTitle.text = "Leccion " + Lection;
             LessonStage.text = "Leccion " + CurrentLession + " de " + TotalLessions;
         }
