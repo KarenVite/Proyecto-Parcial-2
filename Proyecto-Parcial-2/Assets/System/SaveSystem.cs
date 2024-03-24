@@ -70,11 +70,18 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
+    //Esta función carga datos desde un archivo JSON y los deserializa en un
+    //objeto del tipo especificado por el usuario
+    //Usamos una definición generica definida como "T" para que se pueda trabajar con
+    //cualquier tipo de dato que se quiera llamar
     public T LoadFromJSON<T>(string _fileName) where T : new()
     {
+        //creacion de instancia del tipo "T"
         T Dato = new T();
+        //Obtenemos la ruta de archivo de los JSON
         string path = Application.dataPath + "/Resources/JSONS/" + _fileName + ".json";
         string JSONData = "";
+        //Comprobamos si el archivo JSON está en la ruta especificada
         if (File.Exists(path))
         {
             JSONData = File.ReadAllText(path);
@@ -82,12 +89,19 @@ public class SaveSystem : MonoBehaviour
         }
         if (JSONData.Length != 0)
         {
+            //Esto es para deserializar el JSON en el objeto "Dato"
+            //FromJsonOverwrite se encarga de sobreescribir los valores de "Dato" con los valores
+            //del JSON
             JsonUtility.FromJsonOverwrite(JSONData, Dato);
         }
         else
         {
+            //Si el archivo JSON no se encuentra o esta vacio mandará una advertencia a
+            //consola
             Debug.LogWarning("ERROR - FileSystem: JSONData is empty, check for local variable [string JSONData]");
         }
+        //Devuelve el objeto deserializado, si el archivo JSON no se pudo cargar se devolverá
+        //un objeto vacío
         return Dato;
     }
 }
